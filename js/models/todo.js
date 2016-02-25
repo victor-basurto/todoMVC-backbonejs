@@ -13,13 +13,20 @@ var app = app || {};
 		// and ensure that each todo created has `title` and `completed` keys.
 		defaults: {
 			title: '',
-			completed: false
+			completed: false,
+			hightlight: false
+		},
+
+		toggleHighlight: function() {
+			this.save({
+				hightlight: !this.get( 'hightlight' )
+			});
 		},
 
 		// Toggle the `completed` state of this todo item.
 		toggle: function () {
 			this.save({
-				completed: !this.get('completed')
+				completed: !this.get('completed')				
 			});
 		}
 	});
